@@ -1,0 +1,22 @@
+<h1 class="text-center">Tirage au sort</h1>
+<div class="form-box">
+  <form class="newuserform" id="newuserform" role="form">
+    <label class="sr-only" for="newusername">Ajout des participants</label>
+    <input id="newusername" placeholder="Saisis ici le nom d'un participant" type="text" name="newuser.name" ng-model="newuser.name" class="form-control" maxlength="100" />
+    <button class="btn btn-default btn-success right-button" ng-click="newUserAction()">Ajoute ce participant</button>
+  </form>
+</div>
+
+<div class="users-box">
+  <div class="user" ng-repeat="u in users">
+    {{ u.name }} <button class="delete-link" ng-click="removeUserAction(u.name)">X</button>
+  </div>
+</div>
+
+<div ng-if="users.length > 1" class="text-center randomize-box">
+  <button class="btn btn-lg btn-warning" ng-click="randomizeAction()">Tire au sort !</button>
+</div>
+
+<div class="jumbotron text-center result-box" ng-if="chosenOne.name != ''">
+  <h2>Et ça tombe sur... {{ chosenOne.name }} !</h2>
+</div>
