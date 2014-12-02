@@ -9,7 +9,7 @@
 
 <div class="users-box">
   <div class="user" ng-repeat="u in users">
-    {{ u.name }} <button class="delete-link" ng-click="removeUserAction(u.name)">X</button>
+    {{ u.name }} <a class="close" ng-click="removeUserAction(u.name)">x</a>
   </div>
 </div>
 

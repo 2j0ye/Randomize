@@ -19,8 +19,11 @@ angular.module('randomize')
 
     $scope.removeUserAction = function (username) {
       var i = 0;
+      if (username === $scope.chosenOne.name) {
+        $scope.chosenOne = {name: ''};
+      }
       angular.forEach($scope.users, function (user) {
-        if (user.name === username) {
+        if (username === user.name) {
           $scope.users.splice(i, 1);
         }
         i++;
